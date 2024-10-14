@@ -41,3 +41,41 @@ El objetivo principal de este proyecto es crear un sistema basado en blockchain 
 
    ```move
    inicializar_recursos(account);
+
+Uso del Sistema de Recompensas
+
+Inicializar Recursos: Primero, cada cuenta debe inicializar su registro de bosques, su recompensa y su historial de transferencias:
+
+inicializar_recursos(account);
+
+Agregar un Bosque y Otorgar Recompensa: Cada vez que un usuario agrega un bosque, se otorgan 10 puntos de recompensa:
+
+agregar_bosque(account, "Bosque Amazonas", "Amazonas, Perú", 100);
+
+Transferir Recompensas: Un usuario que tiene puntos acumulados puede transferir puntos a otro usuario:
+
+transferir_recompensa(account_a, signer::address_of(account_b), 5);
+
+Consultar Puntos de Recompensa: Los usuarios pueden verificar sus puntos acumulados:
+
+let puntos = consultar_recompensa(signer::address_of(account));
+
+### Mejora del Código
+
+Unificar Inicializaciones: Una mejora importante sería unificar las funciones de inicialización para reducir redundancias. Se podría crear una función inicializar_recursos que inicialice el registro de bosques, la recompensa y el historial de transferencias de una sola vez.
+
+Modularización: Considera dividir el módulo en submódulos para una mejor organización y facilitar el mantenimiento del código.
+
+### Tecnología Utilizada
+
+Aptos Move: El proyecto está implementado en el lenguaje de programación Move, utilizado por la blockchain de Aptos. Move es un lenguaje seguro y eficiente para manejar recursos digitales y garantizar que las transferencias de activos se hagan de forma segura y transparente.
+
+### Contribuciones
+
+Las contribuciones a este proyecto están abiertas para cualquier persona interesada en la conservación ambiental y en el desarrollo de tecnología blockchain. Puedes abrir un pull request o sugerir nuevas funcionalidades que mejoren el sistema.
+
+### Contacto
+
+Si tienes preguntas o sugerencias, no dudes en ponerte en contacto.
+
+© 2024 - Conservación de Bosques en Blockchain
